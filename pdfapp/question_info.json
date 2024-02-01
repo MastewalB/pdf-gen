@@ -1,0 +1,13 @@
+{
+    "Weight Loss":{
+
+        "1": {
+            "question": "",
+            "suggestion": {
+                "title": "",
+                "details": ""
+            },
+            "correctAnswer":"yes"
+        }
+    }
+}

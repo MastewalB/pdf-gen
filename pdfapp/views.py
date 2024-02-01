@@ -1,5 +1,6 @@
+from django.http import HttpResponse
 from django.shortcuts import render
-from rest_framework import status, serializers
+from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from pdfapp.serializers import UserResponseSerializer
@@ -27,3 +28,12 @@ class UserResponseView(APIView):
             )
 
         return Response(status=status.HTTP_400_BAD_REQUEST, data={ 'message': serializer.errors })
+    
+
+class PDFView(APIView):
+
+    def get(self, request):
+        with open('pdfapp/sample.pdf', 'rb') as pdf:
+            response = HttpResponse(pdf.read(), content_type='application/pdf')
+            response['Content-Disposition'] = 'inline;filename=sample.pdf'
+            return response
