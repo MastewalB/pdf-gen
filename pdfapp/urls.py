@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import index
+from pdfapp.views import index, UserResponseView
 
 urlpatterns = [
-    path('', index, name='index')
+    path('', index, name='index'),
+    path('insert/', UserResponseView.as_view())
 ]
