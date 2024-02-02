@@ -1,0 +1,1 @@
+from pdfgen.wsgi import application

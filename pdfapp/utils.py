@@ -5,7 +5,7 @@ from reportlab.pdfgen import canvas
 
 from reportlab.lib.enums import TA_JUSTIFY, TA_LEFT, TA_RIGHT
 from reportlab.lib.pagesizes import LETTER, letter
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, PageBreak
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import inch
 from reportlab.lib.colors import Color
@@ -42,7 +42,7 @@ class FooterCanvas(canvas.Canvas):
         # self.drawImage("static/lr.png", self.width-inch*8-5, self.height-50, width=100, height=20, preserveAspectRatio=True)
         # self.drawImage("static/ohka.png", self.width - inch * 2, self.height-50, width=100, height=30, preserveAspectRatio=True, mask='auto')
         # self.line(30, 760, LETTER[0] - 50, 760)
-        self.line(66, 78, LETTER[0] - 66, 78)
+        # self.line(66, 78, LETTER[0] - 66, 78)
         self.setFont('Times-Roman', 10)
         self.drawString(LETTER[0]-x, 65, page)
         self.restoreState()
@@ -84,6 +84,9 @@ class PDFGenerator:
 
     def build(self):
         for key, val in self.data['sections'].items():
+            
+            scoreValue = val['score'] or 0
+            # if scoreValue < 100:
             titleStyle = ParagraphStyle(self.font_name, fontSize = 16, alignment = TA_LEFT, justifyLastLine = 1)
             title = f"<font color={self.blueColor}><b>{key}</b></font><br />"
             titleSection = Paragraph(title, titleStyle)
@@ -91,7 +94,7 @@ class PDFGenerator:
 
             self.elements.append(Spacer(0, 10))
 
-            scoreValue = val['score'] or 0
+            
             scoreColor = 'red' if scoreValue < 50 else 'green'
             score = f"Score - <font color={scoreColor} size=13>{scoreValue}%</font><br />"
             scoreStyle = ParagraphStyle(self.font_name, fontSize = 13, alignment = TA_LEFT, justifyLastLine = 1)
@@ -101,15 +104,37 @@ class PDFGenerator:
             self.elements.append(Spacer(0, 20))
 
             for q, obj in val['questions'].items():
-                text = f"{q}. {obj['title']} <br /> Your Answer: {obj['answer']} <br /> Suggestion: {obj['suggestion']}"
+                text = f"{q}. <i>{obj['title']}</i> <br /> <br />Your Answer: <i>{obj['answer']}</i> <br />"
                 textStyle = ParagraphStyle(self.font_name, fontSize = 12, alignment = TA_LEFT, justifyLastLine = 1)
-                textStyle.leading = 16
+                textStyle.leading = 15
                 textSection = Paragraph(text, textStyle)
-                self.elements.append(textSection)
 
+                self.elements.append(textSection)
+                
+                self.elements.append(Spacer(0, 10))
+
+                suggestionTitle = f"<b>{obj['suggestion']['title']}</b>"
+                suggestionTitleStyle = ParagraphStyle(self.font_name, fontSize = 12, alignment = TA_LEFT, justifyLastLine = 1)
+                suggestionSection = Paragraph(suggestionTitle, suggestionTitleStyle)
+                self.elements.append(suggestionSection)
+
+                self.elements.append(Spacer(0, 10))
+
+                for detail in obj['suggestion']['details']:
+                    detailTitle = detail
+                    detailTitleStyle = ParagraphStyle(self.font_name, fontSize = 12, alignment = TA_LEFT, justifyLastLine = 1)
+                    detailTitleStyle.leading = 15
+                    detailSection = Paragraph(detailTitle, detailTitleStyle)
+                    self.elements.append(detailSection)
+                    self.elements.append(Spacer(0, 10))                    
+                self.elements.append(Spacer(0, 20))
+            
+            self.elements.append(PageBreak())
+
+                
 
 def changeResponseToPdfFormat(userResponse):
-    questionInfo = open('question_info.json')
+    questionInfo = open('pdfapp/question_info.json')
     questions = json.load(questionInfo)
     
     questionInfo.close()
@@ -118,8 +143,8 @@ def changeResponseToPdfFormat(userResponse):
 
     response = userResponse['response']
     userInfo = {
-        'name': userResponse['email'],
-        'email': userResponse['name']
+        'name': userResponse['name'],
+        'email': userResponse['email']
     }
     output['userInfo'] = userInfo
     output['sections'] = {}
@@ -137,31 +162,61 @@ def changeResponseToPdfFormat(userResponse):
             totalQuestions += 1
             question = section[q]
 
-            if response[q] == question['correctAnswer']:
+            if response[q].lower() == question['correctAnswer'].lower():
                 totalCorrectResponse += 1
             else:
-                output['sections'][sectionTitle][q] = {
+                output['sections'][sectionTitle]['questions'][q] = {
                     'answer': response[q],
                     'title': question['question'],
-                    'suggestion': question['suggestion']['details']
+                    'suggestion': {
+                        'title': question['suggestion']['title'],
+                        'details': question['suggestion']['details']
+                    }
                 }
-        score = int((totalCorrectResponse / totalCorrectResponse) * 100)
+        score = int((totalCorrectResponse / totalQuestions) * 100)
         output['sections'][sectionTitle]['score'] = score
     
     return output
 
 
 
-if __name__ == '__main__':
-    userResponse = {
-    "response": {
-        "1": "yes",
-        "2": "NO"
-    },
-    "email": "tst@tste.com",
-    "name":"test"
-}
-    output = changeResponseToPdfFormat(userResponse)
-    report = PDFGenerator('sample.pdf', output)
+# if __name__ == '__main__':
+#     userResponse = {
+#     "response": {
+#         "1": "No",
+#         "2": "No",
+#         "3": "Yes",
+#         "4": "Yes",
+#         "5": "No",
+#         "6": "yes",
+#         "7": "No",
+#         "8": "yes",
+#         "9": "No",
+#         "10": "yes",
+#         "11": "No",
+#         "12": "yes",
+#         "13": "no",
+#         "14": "no",
+#         "15": "no",
+#         "16": "no",
+#         "17": "no",
+#         "18": "no",
+#         "19": "yes",
+#         "20": "yes",
+#         "21": "yes",
+#         "22": "yes",
+#         "23": "yes",
+#         "24": "yes",
+#         "25": "yes",
+#         "26": "yes",
+#         "27": "yes",
+#         "28": "yes",
+#         "29": "yes",
+#     },
+#     "email": "tst@tste.com",
+#     "name":"test"
+# }
+#     output = changeResponseToPdfFormat(userResponse)
+#     report = PDFGenerator('sample.pdf', output)
 
 
