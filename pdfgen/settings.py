@@ -28,7 +28,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://pdf-service-loev.onrender.com']
+ALLOWED_HOSTS = [env('RENDER_HOST')]
 
 
 # Application definition
