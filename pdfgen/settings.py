@@ -31,7 +31,7 @@ environ.Env.read_env(env_file=env_path)
 SECRET_KEY = env('SECRET_KEY')
 
 
-ALLOWED_HOSTS = [env('RENDER_HOST')]
+ALLOWED_HOSTS = [env('RENDER_HOST'), '127.0.0.1']
 
 
 # Application definition
@@ -148,3 +148,14 @@ COMPRESS_ROOT = BASE_DIR / 'static'
 COMPRESS_ENABLED = True
 
 STATICFILES_FINDERS = ('compressor.finders.CompressorFinder',)
+
+# EMAIL Settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = env('EMAIL_HOST')
+EMAIL_FROM = env('EMAIL_FROM')
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = env('EMAIL_PORT')
+EMAIL_USE_SSL = True
+EMAIL_USE_TLS = False

@@ -1,5 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.core.mail import send_mail, EmailMessage
+from django.template.loader import render_to_string
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -24,18 +26,13 @@ class UserResponseView(APIView):
             userEmail = formattedResponse['userInfo']['email']
             path = f"static/{userEmail}.pdf"
             PDFGenerator(path, formattedResponse)
-
             with open(path, 'rb') as pdf:
-                response = HttpResponse(pdf.read(), content_type='application/pdf')
-            response['Content-Disposition'] = f'inline;filename={path}.pdf'
-            return response
-            # return Response(
-            #     data={
-            #         'message': 'Response saved',
-            #         'data': serializer.data
-            #     },
-            #     status=status.HTTP_201_CREATED
-            # )
+                send_pdf_email(request, userEmail, pdf)
+
+            # with open(path, 'rb') as pdf:
+            #     response = HttpResponse(pdf.read(), content_type='application/pdf')
+            # response['Content-Disposition'] = f'inline;filename={path}.pdf'
+            return Response(status=status.HTTP_200_OK, data={ 'message': 'success' })
 
         return Response(status=status.HTTP_400_BAD_REQUEST, data={ 'message': serializer.errors })
     
@@ -52,3 +49,16 @@ class PDFView(APIView):
             response = HttpResponse(pdf.read(), content_type='application/pdf')
             response['Content-Disposition'] = f'inline;filename={path}.pdf'
             return response
+
+def send_pdf_email(request, to_email, pdf):
+    mail_subject = "Your Quiz Result"
+    message = render_to_string('send_pdf.html', {
+        'title': mail_subject,
+    })
+    email = EmailMessage(
+        mail_subject, message, to=[to_email]
+    )
+    email.attach(pdf.name, pdf.read(), 'application/pdf')
+    if email.send():
+        return True
+    return False
