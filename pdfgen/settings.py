@@ -31,7 +31,7 @@ environ.Env.read_env(env_file=env_path)
 SECRET_KEY = env('SECRET_KEY')
 
 
-ALLOWED_HOSTS = ['https://pdf-service-loev.onrender.com', '127.0.0.1']
+ALLOWED_HOSTS = ['pdf-service-loev.onrender.com', '127.0.0.1']
 
 
 # Application definition
