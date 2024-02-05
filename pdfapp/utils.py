@@ -162,6 +162,8 @@ def changeResponseToPdfFormat(userResponse):
             totalQuestions += 1
             question = section[q]
 
+            if q not in response:
+                response[q] = 'no'
             if response[q].lower() == question['correctAnswer'].lower():
                 totalCorrectResponse += 1
             else:

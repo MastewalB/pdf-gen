@@ -1,17 +1,9 @@
 from rest_framework import fields, serializers
-from pdfapp.models import UserResponse
 
-class UserResponseSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = UserResponse
-        fields = ('name', 'email', 'response')
-    
-    def create(self, validated_data):
-        user_response = UserResponse(
-            name = validated_data['name'],
-            email = validated_data['email'],
-            response = validated_data['response']
-        )
-        user_response.save()
-        return user_response
+class UserResponseSerializer(serializers.Serializer):
+
+    name = serializers.CharField(max_length=200, required=True)
+    email = serializers.EmailField(required=True)
+    response = serializers.JSONField(required=True)
+
     

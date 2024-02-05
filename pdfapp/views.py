@@ -6,6 +6,7 @@ from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from pdfapp.serializers import UserResponseSerializer
+from pdfapp.models import UserResponse
 from .utils import PDFGenerator, changeResponseToPdfFormat
 
 # Create your views here.
@@ -20,18 +21,21 @@ class UserResponseView(APIView):
 
         serializer = UserResponseSerializer(data=data)
         if serializer.is_valid():
-            serializer.save()
             
+            obj, created = UserResponse.objects.update_or_create(
+                email=serializer.data['email'],
+                defaults=serializer.data
+            )
             formattedResponse = changeResponseToPdfFormat(serializer.data)
             userEmail = formattedResponse['userInfo']['email']
             path = f"static/{userEmail}.pdf"
             PDFGenerator(path, formattedResponse)
-            with open(path, 'rb') as pdf:
-                send_pdf_email(request, userEmail, pdf)
+            try:
+                with open(path, 'rb') as pdf:
+                    send_pdf_email(request, userEmail, pdf)
+            except FileNotFoundError:
+                return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR, data={ 'message': "Couldn't send email" })
 
-            # with open(path, 'rb') as pdf:
-            #     response = HttpResponse(pdf.read(), content_type='application/pdf')
-            # response['Content-Disposition'] = f'inline;filename={path}.pdf'
             return Response(status=status.HTTP_200_OK, data={ 'message': 'success' })
 
         return Response(status=status.HTTP_400_BAD_REQUEST, data={ 'message': serializer.errors })
@@ -39,16 +43,18 @@ class UserResponseView(APIView):
 
 class PDFView(APIView):
 
-    def get(self, request):
-        data = request.data
-        if 'email' not in data:
-              return Response(status=status.HTTP_400_BAD_REQUEST, data={ 'message': 'No email provided' })
+    def get(self, request, email):
 
-        path = f"static/{data['email']}.pdf"
-        with open('pdfapp/sample.pdf', 'rb') as pdf:
-            response = HttpResponse(pdf.read(), content_type='application/pdf')
-            response['Content-Disposition'] = f'inline;filename={path}.pdf'
-            return response
+        path = f"static/{email}.pdf"
+        try:
+            with open(path, 'rb') as pdf:
+                    
+                response = HttpResponse(pdf.read(), content_type='application/pdf')
+                response['Content-Disposition'] = f'inline;filename={path}.pdf'
+                return response
+        except FileNotFoundError:
+            return Response(status=status.HTTP_404_NOT_FOUND, data={ 'message': "File not Found" })
+
 
 def send_pdf_email(request, to_email, pdf):
     mail_subject = "Your Quiz Result"
