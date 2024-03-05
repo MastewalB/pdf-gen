@@ -6,10 +6,12 @@ django-compressor==4.4
 django-cors-headers==4.3.1
 django-environ==0.11.2
 djangorestframework==3.14.0
+djangorestframework-simplejwt==5.3.1
 gunicorn==21.2.0
 packaging==23.2
 pillow==10.2.0
 psycopg2-binary==2.9.9
+PyJWT==2.8.0
 pytz==2023.4
 rcssmin==1.1.1
 reportlab==4.0.9

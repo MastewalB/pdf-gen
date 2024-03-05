@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 import os
 from pathlib import Path
+from datetime import timedelta
 import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -45,7 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'compressor',
-    'pdfapp'
+    'pdfapp',
+    'pdfadmin'
 ]
 
 MIDDLEWARE = [
@@ -77,7 +79,23 @@ TEMPLATES = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'pdfadmin.backends.AdminAuthBackend',
+    'django.conrib.auth.backends.ModelBackend'
+]
+
 WSGI_APPLICATION = 'pdfgen.wsgi.application'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),
+}
 
 DEBUG_DB_CONFIG = {
     'default': {
@@ -163,3 +181,6 @@ EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = env('EMAIL_PORT')
 EMAIL_USE_SSL = True
 EMAIL_USE_TLS = False
+
+ADMIN_LOGIN = env('ADMIN_LOGIN')
+ADMIN_PASSWORD = env('ADMIN_PASSWORD')
