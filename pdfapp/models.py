@@ -6,3 +6,4 @@ class UserResponse(models.Model):
     name = models.CharField(max_length=200)
     email = models.EmailField(unique=True)
     response = models.JSONField()
+    paid = models.BooleanField(default=False)
