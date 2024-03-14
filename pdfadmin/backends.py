@@ -20,7 +20,7 @@ class AdminAuthBackend(BaseBackend):
                 user.is_superuser = True
                 user.save()
             return user
-        return None
+        raise ValueError("Incorrect Login Credential")
     
     def get_user(self, user_id):
         try:

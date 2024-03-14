@@ -31,14 +31,25 @@ class LoginView(APIView):
             token = AdminAuthBackend.encode_token(user)
 
             return Response(
-                {
+                status=status.HTTP_200_OK,
+                data = {
                     "token": token
                 }
             )
-        except serializers.ValidationError:
+        
+        except ValueError:
             return Response(
-                {
-                    "message": "Invalid Login Credentials"
+                status=status.HTTP_400_BAD_REQUEST,
+                data = {
+                    "message": "Invalid Login Credentials Provided"
+                }
+            )
+        
+        except Exception as e:
+            return Response(
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                data = {
+                    "message": str(e)
                 }
             )
 
