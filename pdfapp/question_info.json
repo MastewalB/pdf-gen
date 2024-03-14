@@ -4,7 +4,7 @@
             "question": "Do you have an understanding of your daily caloric needs to support your weight goals?",
             "suggestion": {
                 "title": "",
-                "details": ["Suggestion: Consider consulting with a nutritionist or using online tools to calculate your daily caloric needs based on your goals. Educate yourself on the factors influencing caloric requirements, such as activity level and metabolism"]
+                "details": ["Consider consulting with a nutritionist or using online tools to calculate your daily caloric needs based on your goals. Educate yourself on the factors influencing caloric requirements, such as activity level and metabolism"]
             },
             "correctAnswer":"yes"
         },
@@ -12,7 +12,7 @@
             "question": "Are you familiar with the calorie content of the foods you regularly include in your diet?",
             "suggestion": {
                 "title": "",
-                "details": ["Suggestion: Consider consulting with a nutritionist or using online tools to calculate your daily caloric needs based on your goals. Educate yourself on the factors influencing caloric requirements, such as activity level and metabolism.  Start by researching and familiarising yourself with the calorie content of common foods. Utilise mobile apps or online databases that provide nutritional information. Gradually, this awareness will become second nature."]
+                "details": ["Consider consulting with a nutritionist or using online tools to calculate your daily caloric needs based on your goals. Educate yourself on the factors influencing caloric requirements, such as activity level and metabolism.  Start by researching and familiarising yourself with the calorie content of common foods. Utilise mobile apps or online databases that provide nutritional information. Gradually, this awareness will become second nature."]
             },
             "correctAnswer":"yes"
         },
@@ -20,7 +20,7 @@
             "question": "Can you identify what constitutes a healthy portion size when preparing or consuming meals?",
             "suggestion": {
                 "title": "Portion Size Recognition:",
-                "details": ["Suggestion: Use visual aids like the palm of your hand or common objects to estimate portion sizes. Practice using measuring cups and scales until you develop a better sense of appropriate servings. Consider taking smaller portions initially and assessing hunger cues before going for seconds."]
+                "details": ["Use visual aids like the palm of your hand or common objects to estimate portion sizes. Practice using measuring cups and scales until you develop a better sense of appropriate servings. Consider taking smaller portions initially and assessing hunger cues before going for seconds."]
             },
             "correctAnswer":"yes"
         },
@@ -28,7 +28,7 @@
             "question": "Have you made an effort to log and monitor everything you consume, including food and beverages, throughout a day?",
             "suggestion": {
                 "title": "Dietary Tracking Attempt",
-                "details": ["Suggestion: Start a food journal or use a nutrition tracking app to log your daily intake. Set achievable goals for consistency, such as tracking for a few days a week initially. Reviewing your journal can help identify patterns and areas for improvement."]
+                "details": ["Start a food journal or use a nutrition tracking app to log your daily intake. Set achievable goals for consistency, such as tracking for a few days a week initially. Reviewing your journal can help identify patterns and areas for improvement."]
             },
             "correctAnswer":"yes"
         },
@@ -36,7 +36,7 @@
             "question": "Are you conscious of any patterns of unhealthy eating habits that might be affecting your weight?",
             "suggestion": {
                 "title": "Recognition of Unhealthy Eating Habits",
-                "details": ["Suggestion: Keep a reflective journal to document your eating habits and feelings associated with them. Consider seeking support from a nutritionist or counsellor to identify triggers and develop healthier alternatives. Gradual changes, like swapping one unhealthy habit for a healthier choice, can be a good starting point."]
+                "details": ["Keep a reflective journal to document your eating habits and feelings associated with them. Consider seeking support from a nutritionist or counsellor to identify triggers and develop healthier alternatives. Gradual changes, like swapping one unhealthy habit for a healthier choice, can be a good starting point."]
             },
             "correctAnswer":"yes"
         },
@@ -44,7 +44,7 @@
             "question": "Do you possess the knowledge to accurately determine the calorie content of the foods you typically consume?",
             "suggestion": {
                 "title": "Caloric Content Comprehension",
-                "details": ["Suggestion: Educate yourself on how to read nutritional labels and understand portion sizes. Practice estimating calorie content and gradually build your knowledge. Consider using apps that provide information on the nutritional value of foods."]
+                "details": ["Educate yourself on how to read nutritional labels and understand portion sizes. Practice estimating calorie content and gradually build your knowledge. Consider using apps that provide information on the nutritional value of foods."]
             },
             "correctAnswer":"yes"
         },
@@ -52,7 +52,7 @@
             "question": "Are you actively engaged in mindful eating, paying attention to the nutritional value and portion sizes of your meals?",
             "suggestion": {
                 "title": "Mindful Eating Practices",
-                "details": ["Suggestion: Start small by incorporating mindfulness techniques into one meal per day. Focus on savouring each bite, paying attention to flavours, and recognizing hunger cues. Eliminate distractions during meals to enhance mindfulness."]
+                "details": ["Start small by incorporating mindfulness techniques into one meal per day. Focus on savouring each bite, paying attention to flavours, and recognizing hunger cues. Eliminate distractions during meals to enhance mindfulness."]
             },
             "correctAnswer":"yes"
         },
@@ -60,7 +60,7 @@
             "question": "Do you regularly read and consider nutritional labels when making food choices? ",
             "suggestion": {
                 "title": "Label Reading Habit",
-                "details": ["Suggestion: Make it a habit to review nutritional labels when shopping for groceries. Educate yourself on key elements, such as serving sizes, macronutrients, and ingredient lists. Gradually, this practice will become routine, helping you make more informed choices."]
+                "details": ["Make it a habit to review nutritional labels when shopping for groceries. Educate yourself on key elements, such as serving sizes, macronutrients, and ingredient lists. Gradually, this practice will become routine, helping you make more informed choices."]
             },
             "correctAnswer":"yes"
         },
@@ -68,7 +68,7 @@
             "question": "Are you aware of the potential hidden sources of calories in condiments, dressings, and other additives in your meals?",
             "suggestion": {
                 "title": "Understanding Hidden Calories",
-                "details": ["Suggestion: Educate yourself on common sources of hidden calories in condiments, dressings, and additives. Read labels to identify high-calorie condiments and explore healthier alternatives. Consider making your own dressings with olive oil, herbs, and vinegar to control ingredients and calories. Be mindful of portion sizes for these additions."]
+                "details": ["Educate yourself on common sources of hidden calories in condiments, dressings, and additives. Read labels to identify high-calorie condiments and explore healthier alternatives. Consider making your own dressings with olive oil, herbs, and vinegar to control ingredients and calories. Be mindful of portion sizes for these additions."]
             },
             "correctAnswer":"yes"
         },
@@ -76,7 +76,7 @@
             "question": "Do you prioritise choosing foods with high nutrient density to ensure optimal nutrition while managing calorie intake?",
             "suggestion": {
                 "title": "Nutrient-Density Awareness",
-                "details": ["Suggestion: Prioritise whole, nutrient-dense foods such as fruits, vegetables, lean proteins, and whole grains. Familiarise yourself with the concept of the nutrient density of foods. Create balanced meals that include a variety of colours and food groups. Explore recipes that maximise nutrient content without excessive calories."]
+                "details": ["Prioritise whole, nutrient-dense foods such as fruits, vegetables, lean proteins, and whole grains. Familiarise yourself with the concept of the nutrient density of foods. Create balanced meals that include a variety of colours and food groups. Explore recipes that maximise nutrient content without excessive calories."]
             },
             "correctAnswer":"yes"
         }
@@ -99,9 +99,9 @@
             "suggestion": {
                 "title": "Mental health can affect weight through emotional eating, changes in appetite,  reduced motivation for physical activity. Provide some short suggestions for addressing these.",
                 "details": [
-                    "Suggestion: Develop alternative coping mechanisms for emotional distress, such as journaling, deep breathing exercises, or engaging in a hobby. Seek support from friends, family, or a therapist to address underlying emotional triggers.",
+                    "Develop alternative coping mechanisms for emotional distress, such as journaling, deep breathing exercises, or engaging in a hobby. Seek support from friends, family, or a therapist to address underlying emotional triggers.",
                     "Changes in Appetite: Establish regular, balanced meal times. Focus on nutrient-dense foods to support overall health. Consult a registered dietitian to create a personalised meal plan aligned with your appetite patterns.",
-                    "You may also have reduced motivation for Physical Activity. Suggestion: Start with small, achievable goals for physical activity. Choose activities you enjoy to increase motivation. Consider socialising during exercise to enhance enjoyment and accountability. Consult with a fitness professional for tailored guidance."
+                    "You may also have reduced motivation for Physical Activity. Start with small, achievable goals for physical activity. Choose activities you enjoy to increase motivation. Consider socialising during exercise to enhance enjoyment and accountability. Consult with a fitness professional for tailored guidance."
                 ]
             },
             "correctAnswer":"no"
@@ -112,7 +112,7 @@
                 "title": "Physical pain limiting movement:",
                 "details": [
                     "Pain can restrict movement and reduce physical activity and daily movement, contributing to weight gain due to a decrease in energy expenditure and potential weight gain.",
-                    "Suggestion: Pain management, physical therapy, and low-impact exercises (including water therapy) can help manage pain and prevent weight gain. Assistive devices may be utilised to improve mobility and support weight maintenance or loss.",
+                    "Pain management, physical therapy, and low-impact exercises (including water therapy) can help manage pain and prevent weight gain. Assistive devices may be utilised to improve mobility and support weight maintenance or loss.",
                     "If you are facing limitations in movement due to a condition, work closely with healthcare professionals, including physical therapists and specialists, to develop tailored strategies that address both their specific health condition and weight management. Remember reduced movement means you won't expend as many calories and closer attention needs to be given to choosing nutrient dense calorie controlled foods."
                 ]
             },
@@ -123,7 +123,7 @@
             "suggestion": {
                 "title": "Weight Change Observation",
                 "details": [
-                    "Suggestion: Regular Monitoring: Keep a record of your weight changes over time. Create a simple chart or use a tracking app to document fluctuations. Share this information with your healthcare provider during check-ups for a more comprehensive understanding."
+                    "Regular Monitoring: Keep a record of your weight changes over time. Create a simple chart or use a tracking app to document fluctuations. Share this information with your healthcare provider during check-ups for a more comprehensive understanding."
                 ]
             },
             "correctAnswer":"no"
@@ -133,7 +133,7 @@
             "suggestion": {
                 "title": "Medication Impact Awareness",
                 "details": [
-                    "Suggestion: Pharmacist Consultation: Schedule a consultation with your pharmacist to discuss the potential side effects of your medications, including their impact on weight. Pharmacists can provide detailed insights into medication-related concerns."
+                    "Pharmacist Consultation: Schedule a consultation with your pharmacist to discuss the potential side effects of your medications, including their impact on weight. Pharmacists can provide detailed insights into medication-related concerns."
                 ]
             },
             "correctAnswer":"no"
@@ -143,7 +143,7 @@
             "suggestion": {
                 "title": "Weight Management Despite Conditions",
                 "details": [
-                    "Suggestion: Collaborative Planning - work closely with your healthcare provider to develop a tailored weight management plan that considers your medical condition. This plan may include dietary modifications, physical activity recommendations, and regular check-ins."]
+                    "Collaborative Planning - work closely with your healthcare provider to develop a tailored weight management plan that considers your medical condition. This plan may include dietary modifications, physical activity recommendations, and regular check-ins."]
             },
             "correctAnswer":"no"
         }
@@ -154,7 +154,7 @@
             "suggestion": {
                 "title": "Emotional eating",
                 "details": [
-                    "Suggestion: Alternative Coping Strategies: Identify alternative ways to cope with emotions without turning to food. This could include journaling, deep breathing exercises, or engaging in a hobby. Consider seeking support from friends, family, or a therapist to discuss emotions and explore healthier coping mechanisms."]
+                    "Alternative Coping Strategies: Identify alternative ways to cope with emotions without turning to food. This could include journaling, deep breathing exercises, or engaging in a hobby. Consider seeking support from friends, family, or a therapist to discuss emotions and explore healthier coping mechanisms."]
             },
             "correctAnswer":"no"
         },
@@ -163,7 +163,7 @@
             "suggestion": {
                 "title": "Boredom Eating",
                 "details": [
-                    "Suggestion: Create a Boredom List: Develop a list of alternative activities to combat boredom. This may include going for a walk, reading a book, or trying a new hobby. When boredom strikes, refer to this list to engage in a non-food-related activity."]
+                    "Create a Boredom List: Develop a list of alternative activities to combat boredom. This may include going for a walk, reading a book, or trying a new hobby. When boredom strikes, refer to this list to engage in a non-food-related activity."]
             },
             "correctAnswer":"no"
         },
@@ -172,7 +172,7 @@
             "suggestion": {
                 "title": "Eating when lonely",
                 "details": [
-                    "Suggestion: Connect Socially: Reach out to friends, family, or support groups when feeling lonely. Schedule regular social activities to build connections and combat isolation. Consider joining clubs or classes to meet new people and expand your social circle."]
+                    "Connect Socially: Reach out to friends, family, or support groups when feeling lonely. Schedule regular social activities to build connections and combat isolation. Consider joining clubs or classes to meet new people and expand your social circle."]
             },
             "correctAnswer":"no"
         },
@@ -181,7 +181,7 @@
             "suggestion": {
                 "title": "Celebratory occasion eating",
                 "details": [
-                    "Suggestion: Plan Moderation: Plan ahead for celebratory occasions by setting limits on indulgent foods. Opt for smaller portions or choose healthier alternatives. Focus on the social aspect of the celebration rather than using food as the main source of enjoyment."]
+                    "Plan Moderation: Plan ahead for celebratory occasions by setting limits on indulgent foods. Opt for smaller portions or choose healthier alternatives. Focus on the social aspect of the celebration rather than using food as the main source of enjoyment."]
             },
             "correctAnswer":"no"
         },
@@ -199,7 +199,7 @@
             "suggestion": {
                 "title": "Comfort snacking",
                 "details": [
-                    "Suggestion: Alternative Coping Strategies: Identify alternative ways to cope with emotions without turning to food. This could include journaling, deep breathing exercises, or engaging in a hobby. Consider seeking support from friends, family, or a therapist to discuss emotions and explore healthier coping mechanisms."]
+                    "Alternative Coping Strategies: Identify alternative ways to cope with emotions without turning to food. This could include journaling, deep breathing exercises, or engaging in a hobby. Consider seeking support from friends, family, or a therapist to discuss emotions and explore healthier coping mechanisms."]
             },
             "correctAnswer":"no"
         },
@@ -208,7 +208,7 @@
             "suggestion": {
                 "title": "Food Rewards",
                 "details": [
-                    "Suggestion: Non-Food Rewards: Establish a list of non-food rewards for achievements. This could include treating yourself to a movie, taking a day off, or enjoying a relaxing activity. Shift the focus from food as a reward to activities that contribute to your overall well-being."]
+                    "Non-Food Rewards: Establish a list of non-food rewards for achievements. This could include treating yourself to a movie, taking a day off, or enjoying a relaxing activity. Shift the focus from food as a reward to activities that contribute to your overall well-being."]
             },
             "correctAnswer":"no"
         },
@@ -217,7 +217,7 @@
             "suggestion": {
                 "title": "Late Night Snacking",
                 "details": [
-                    "Suggestion: Nighttime Routine: Develop a calming nighttime routine that doesn't involve eating. This could include reading a book, practicing relaxation techniques, or engaging in a quiet hobby. Create a soothing environment to promote better sleep and emotional well-being."]
+                    "Nighttime Routine: Develop a calming nighttime routine that doesn't involve eating. This could include reading a book, practicing relaxation techniques, or engaging in a quiet hobby. Create a soothing environment to promote better sleep and emotional well-being."]
             },
             "correctAnswer":"no"
         },
@@ -226,7 +226,7 @@
             "suggestion": {
                 "title": "Healthy Social Activities",
                 "details": [
-                    "Suggestion: Healthy Social Activities: Plan social activities that revolve around non-food-related experiences, such as outdoor activities, games, or cultural events. Choose restaurants with healthier options or suggest potluck-style gatherings where you can contribute a nutritious dish"]
+                    "Healthy Social Activities: Plan social activities that revolve around non-food-related experiences, such as outdoor activities, games, or cultural events. Choose restaurants with healthier options or suggest potluck-style gatherings where you can contribute a nutritious dish"]
             },
             "correctAnswer":"no"
         },
@@ -235,7 +235,7 @@
             "suggestion": {
                 "title": "Mindful Snacking",
                 "details": [
-                    "Suggestion: Create a designated eating area away from distractions. Portion snacks mindfully, and focus on the sensory experience of eating. Consider using smaller bowls or plates to prevent overeating during screen time. Mindful Distraction Techniques: Practise mindful distraction techniques, such as deep breathing exercises or engaging in a creative activity. Develop a list of activities that serve as positive distractions from negative emotions. Use these techniques when the urge to eat for distraction arises."]
+                    "Create a designated eating area away from distractions. Portion snacks mindfully, and focus on the sensory experience of eating. Consider using smaller bowls or plates to prevent overeating during screen time. Mindful Distraction Techniques: Practise mindful distraction techniques, such as deep breathing exercises or engaging in a creative activity. Develop a list of activities that serve as positive distractions from negative emotions. Use these techniques when the urge to eat for distraction arises."]
             },
             "correctAnswer":"no"
         },
@@ -244,7 +244,7 @@
             "suggestion": {
                 "title": "Mindful Eating Practices",
                 "details": [
-                    "Suggestion: Incorporate mindful eating into your routine. Focus on the sensory aspects of each bite, chew slowly, and savour the flavours. Eliminate distractions during meals and pay attention to your body's hunger and fullness cues. Consider taking mindful eating courses or using apps to guide your practice."]
+                    "Incorporate mindful eating into your routine. Focus on the sensory aspects of each bite, chew slowly, and savour the flavours. Eliminate distractions during meals and pay attention to your body's hunger and fullness cues. Consider taking mindful eating courses or using apps to guide your practice."]
             },
             "correctAnswer":"no"
         },
@@ -267,7 +267,7 @@
             "suggestion": {
                 "title": "Nutrient Tracking",
                 "details": [
-                    "Suggestion: Consider using a nutrition tracking app or journal to monitor your daily nutrient intake. Aim for a balance of macronutrients (carbohydrates, proteins, and fats) and micronutrients (vitamins and minerals). Consult with a registered dietitian or nutrition coach for personalised guidance.",
+                    "Consider using a nutrition tracking app or journal to monitor your daily nutrient intake. Aim for a balance of macronutrients (carbohydrates, proteins, and fats) and micronutrients (vitamins and minerals). Consult with a registered dietitian or nutrition coach for personalised guidance.",
                     "Eating from the following 5 food groups can help to achieve balanced nutrition:<br />1. Vegetables and legumes/beans<br />2. Fruits<br />3. Whole grains (Cereal) foods<br />4. Lean meats and poultry, Fish, Eggs, Tofu, Nuts, and Seeds<br />5. Milk, Yogurt, Cheese, and Alternatives"
                 ]
             },
@@ -278,7 +278,7 @@
             "suggestion": {
                 "title": "Colourful Plate",
                 "details": [
-                    "Suggestion: Make a conscious effort to include a variety of colourful fruits and vegetables in each meal. Experiment with different types and preparation methods. Create a weekly meal plan that features diverse fruits and vegetables to ensure variety."
+                    "Make a conscious effort to include a variety of colourful fruits and vegetables in each meal. Experiment with different types and preparation methods. Create a weekly meal plan that features diverse fruits and vegetables to ensure variety."
                 ]
             },
             "correctAnswer":"yes"
@@ -288,7 +288,7 @@
             "suggestion": {
                 "title": "Fruit Accessibility",
                 "details": [
-                    "Suggestion: Fruit Accessibility: Keep a variety of fruits readily available and visible at home. Consider prepping fruit ahead of time for easy snacking. Set a goal to incorporate fruit into different meals, such as adding berries to breakfast or having a piece of fruit as an afternoon snack."
+                    "Fruit Accessibility: Keep a variety of fruits readily available and visible at home. Consider prepping fruit ahead of time for easy snacking. Set a goal to incorporate fruit into different meals, such as adding berries to breakfast or having a piece of fruit as an afternoon snack."
                 ]
             },
             "correctAnswer":"yes"
@@ -298,7 +298,7 @@
             "suggestion": {
                 "title": "Vegetable Prepping",
                 "details": [
-                    "Suggestion: Plan and prepare vegetable-centric meals for the week. Include a mix of raw and cooked vegetables. Experiment with different cooking methods and seasonings to enhance flavour. Gradually increase portion sizes to meet the recommended servings."
+                    "Plan and prepare vegetable-centric meals for the week. Include a mix of raw and cooked vegetables. Experiment with different cooking methods and seasonings to enhance flavour. Gradually increase portion sizes to meet the recommended servings."
                 ]
             },
             "correctAnswer":"yes"
@@ -308,7 +308,7 @@
             "suggestion": {
                 "title": "Fish Variety",
                 "details": [
-                    "Suggestion: Incorporate a variety of fish into your diet, aiming for at least two servings per week. Experiment with different cooking methods, such as grilling or baking. If fish oil supplements are preferred, consult with your healthcare provider to determine the appropriate dosage."
+                    "Incorporate a variety of fish into your diet, aiming for at least two servings per week. Experiment with different cooking methods, such as grilling or baking. If fish oil supplements are preferred, consult with your healthcare provider to determine the appropriate dosage."
                 ]
             },
             "correctAnswer":"yes"
@@ -318,7 +318,7 @@
             "suggestion": {
                 "title": "Whole Food Focus",
                 "details": [
-                    "Suggestion: Prioritise whole, minimally processed foods. Plan meals using fresh ingredients and limit the use of canned or packaged items. Read labels to choose options with fewer additives and preservatives. Batch cooking on weekends can also reduce reliance on convenience foods."
+                    "Prioritise whole, minimally processed foods. Plan meals using fresh ingredients and limit the use of canned or packaged items. Read labels to choose options with fewer additives and preservatives. Batch cooking on weekends can also reduce reliance on convenience foods."
                 ]
             },
             "correctAnswer":"no"
@@ -328,7 +328,7 @@
             "suggestion": {
                 "title": "Sweet Alternatives",
                 "details": [
-                    "Suggestion: Gradually reduce the frequency of sweet treats by exploring healthier alternatives. Experiment with fruit-based desserts, yoghurt with natural sweeteners, or homemade treats with reduced sugar. Allow yourself occasional indulgences, but focus on moderation."
+                    "Gradually reduce the frequency of sweet treats by exploring healthier alternatives. Experiment with fruit-based desserts, yoghurt with natural sweeteners, or homemade treats with reduced sugar. Allow yourself occasional indulgences, but focus on moderation."
                 ]
             },
             "correctAnswer":"no"
@@ -338,7 +338,7 @@
             "suggestion": {
                 "title": "Meal Planning",
                 "details": [
-                    "Suggestion: Set aside dedicated time for meal planning and preparation. Create a weekly menu, batch-cook if possible, and experiment with simple recipes. Cooking at home allows you to control ingredients and make healthier choices. Consider involving family members to make it a shared activity."
+                    "Set aside dedicated time for meal planning and preparation. Create a weekly menu, batch-cook if possible, and experiment with simple recipes. Cooking at home allows you to control ingredients and make healthier choices. Consider involving family members to make it a shared activity."
                 ]
             },
             "correctAnswer":"yes"
@@ -348,7 +348,7 @@
             "suggestion": {
                 "title": "Homemade Options",
                 "details": [
-                    "Suggestions: Gradually reduce reliance on pre-packaged or restaurant meals. Plan and prepare meals at home, emphasising whole ingredients. Experiment with recreating favourite restaurant dishes in a healthier way. This allows for better control over portion sizes and ingredients."
+                    "Gradually reduce reliance on pre-packaged or restaurant meals. Plan and prepare meals at home, emphasising whole ingredients. Experiment with recreating favourite restaurant dishes in a healthier way. This allows for better control over portion sizes and ingredients."
                 ]
             },
             "correctAnswer":"no"
@@ -358,7 +358,7 @@
             "suggestion": {
                 "title": "Sweet Craving Strategies",
                 "details": [
-                    "Suggestion: Identify alternative snacks that satisfy sweet cravings in a healthier way, such as fresh fruit, yoghurt, or a small serving of dark chocolate. Keep these options readily available to make healthier choices when cravings arise. Focus on moderation and mindful enjoyment."
+                    "Identify alternative snacks that satisfy sweet cravings in a healthier way, such as fresh fruit, yoghurt, or a small serving of dark chocolate. Keep these options readily available to make healthier choices when cravings arise. Focus on moderation and mindful enjoyment."
                 ]
             },
             "correctAnswer":"no"

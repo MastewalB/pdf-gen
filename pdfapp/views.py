@@ -10,6 +10,8 @@ from pdfapp.serializers import UserResponseSerializer
 from pdfapp.models import UserResponse
 from .utils import PDFGenerator, changeResponseToPdfFormat
 import stripe
+import json
+from pdfadmin.models import Question, QuestionSection
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 # Create your views here.
@@ -79,6 +81,43 @@ class PaymentView(APIView):
             return Response(status=status.HTTP_400_BAD_REQUEST, data={"message": "Error while processing payment. Please try again."})
 
 class PDFView(APIView):
+
+
+    def post(self, request, email):
+        
+        file = open('pdfapp/question_info.json')
+        questions = json.load(file)
+        createdQuestions = []
+        
+        for sectionTitle in questions:
+
+            sectionObject, created = QuestionSection.objects.get_or_create(title=sectionTitle)
+            section = questions[sectionTitle]
+
+            for q in section:
+                question = section[q]
+                correctAnswer = question['correctAnswer']
+                content = question['question']
+                suggestionTitle = question['suggestion']['title'] or "Suggestion"
+                suggestionDetail = question['suggestion']['details']
+
+                suggestionText = f'<b>{suggestionTitle}</b>'
+                for detail in suggestionDetail:
+                    suggestionText += f'<p>{detail}</p>'
+                
+                qObj = Question.objects.create(
+                    section = sectionObject,
+                    content = content,
+                    correctAnswer = correctAnswer,
+                    suggestion = suggestionText
+                )
+                qObj.save()
+                createdQuestions.append(q)
+
+        return Response(
+            status=status.HTTP_200_OK,
+            data=createdQuestions
+        )
 
     def get(self, request, email):
 

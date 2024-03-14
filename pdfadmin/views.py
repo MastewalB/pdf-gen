@@ -12,6 +12,8 @@ from rest_framework.permissions import AllowAny, IsAuthenticated, IsAdminUser
 from pdfadmin.models import Question, QuestionSection
 from pdfadmin.serializers import LoginSerializer, QuestionSerializer,QuestionIdListSerializer, QuestionSectionSerializer
 from pdfadmin.backends import AdminAuthBackend
+from pdfapp.models import UserResponse
+from pdfapp.serializers import UserInformationSerializer
 
 # Create your views here.
 
@@ -187,6 +189,33 @@ class AllQuestionSectionView(ListAPIView):
             return result
         queryset = QuestionSection.objects.all()
         return queryset
+
+class UserListView(ListAPIView):
+    permission_classes = [IsAdminUser]
+    
+    serializer_class = UserInformationSerializer
+    pagination_class = PageNumberPagination
+
+    def get_queryset(self):
+        return UserResponse.objects.all()
+
+class AnalyticsView(APIView):
+    permission_classes = [IsAdminUser]
+    
+    def get(self, request):
+
+        users = UserResponse.objects.count()
+        paidUsers = UserResponse.objects.filter(paid=True).count()
+        questions = Question.objects.count()
+
+        return Response(
+            status=status.HTTP_200_OK,
+            data = {
+                "questions": questions,
+                "payments": paidUsers,
+                "users": users
+            }
+        )
 
 
 def toPgArray(array):
