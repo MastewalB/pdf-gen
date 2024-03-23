@@ -8,6 +8,8 @@ urlpatterns = [
     path('questions/list/', AllQuestionsView.as_view()),
     path('sections/', QuestionSectionView.as_view()),
     path('sections/list', AllQuestionSectionView.as_view()),
+    path('sections/delete', QuestionSectionView.as_view()),
+    path('sections/<str:id>', QuestionSectionView.as_view()),
     path('analytics', AnalyticsView.as_view()),
     path('users', UserListView.as_view())
 ]

@@ -4,7 +4,7 @@ from pdfadmin.models import Question, QuestionSection
 class QuestionSectionSerializer(serializers.ModelSerializer):
     class Meta:
         model = QuestionSection
-        fields = ("id", "title")
+        fields = ["id", "title"]
         read_only_fields = [
             "id"
         ]

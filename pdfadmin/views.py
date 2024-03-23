@@ -162,7 +162,7 @@ class QuestionSectionView(APIView):
         serializer = QuestionSectionSerializer(data=request.data)
         if serializer.is_valid():
             try:
-                section = QuestionSection(id = id)
+                section = QuestionSection.objects.get(id = id)
                 serializer.update(section, serializer.validated_data)
 
                 return Response(
@@ -186,6 +186,15 @@ class QuestionSectionView(APIView):
                 'message': serializer.errors
             }
         )
+
+    def delete(self, request):
+        serializer = QuestionIdListSerializer(data = request.data)
+        serializer.is_valid(raise_exception=True)
+        for id in serializer.validated_data['ids']:
+            section = QuestionSection.objects.filter(id = id)
+            if section:
+                section[0].delete()
+        return Response(status=status.HTTP_200_OK)        
 
 class AllQuestionSectionView(ListAPIView):
     serializer_class = QuestionSectionSerializer
@@ -218,13 +227,15 @@ class AnalyticsView(APIView):
         users = UserResponse.objects.count()
         paidUsers = UserResponse.objects.filter(paid=True).count()
         questions = Question.objects.count()
+        sections = QuestionSection.objects.count()
 
         return Response(
             status=status.HTTP_200_OK,
             data = {
                 "questions": questions,
                 "payments": paidUsers,
-                "users": users
+                "users": users,
+                "sections": sections
             }
         )
 
