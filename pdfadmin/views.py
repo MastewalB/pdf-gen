@@ -121,7 +121,6 @@ class QuestionsView(APIView):
         
     
 class AllQuestionsView(ListAPIView):
-    permission_classes = [IsAdminUser]
 
     serializer_class = QuestionSerializer
     pagination_class = PageNumberPagination
