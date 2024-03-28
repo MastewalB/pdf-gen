@@ -10,7 +10,7 @@ from django.shortcuts import get_object_or_404
 from rest_framework import serializers, status
 from rest_framework.permissions import AllowAny, IsAuthenticated, IsAdminUser
 from pdfadmin.models import Question, QuestionSection
-from pdfadmin.serializers import LoginSerializer, QuestionSerializer,QuestionIdListSerializer, QuestionSectionSerializer
+from pdfadmin.serializers import LoginSerializer, QuestionSerializer,QuestionIdListSerializer, QuestionSectionSerializer, ListQuestionSectionSerializer
 from pdfadmin.backends import AdminAuthBackend
 from pdfapp.models import UserResponse
 from pdfapp.serializers import UserInformationSerializer
@@ -111,6 +111,7 @@ class QuestionsView(APIView):
         )
     
 class QuestionDeleteView(APIView):
+    permission_classes = [IsAdminUser]
 
     def delete(self, request):
 
@@ -212,11 +213,24 @@ class QuestionSectionView(APIView):
         for id in serializer.validated_data['ids']:
             section = QuestionSection.objects.filter(id = id)
             if section:
-                section[0].delete()
-        return Response(status=status.HTTP_200_OK)        
+                questionCount = Question.objects.filter(section = section[0])
+                if len(questionCount) <= 0:
+                    section[0].delete()
+                else:
+                    return Response(
+                        {
+                        "message": "The section has questions."
+                        },
+                        status=status.HTTP_400_BAD_REQUEST
+                    )
+        return Response(
+                {
+                    "message": "Section deleted successfully."
+                        },
+                status=status.HTTP_200_OK)        
 
 class AllQuestionSectionView(ListAPIView):
-    serializer_class = QuestionSectionSerializer
+    serializer_class = ListQuestionSectionSerializer
     pagination_class = PageNumberPagination
 
     def get_queryset(self):

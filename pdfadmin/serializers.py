@@ -9,6 +9,19 @@ class QuestionSectionSerializer(serializers.ModelSerializer):
             "id"
         ]
 
+class ListQuestionSectionSerializer(serializers.ModelSerializer):
+    questionCount = serializers.SerializerMethodField()
+
+    class Meta:
+        model = QuestionSection
+        fields = ["id", "title", "questionCount"]
+        read_only_fields = [
+            "id"
+        ]
+        
+    def get_questionCount(self, obj):
+        count = Question.objects.filter(section = obj.id)
+        return len(count)
 
 class QuestionSerializer(serializers.ModelSerializer):
     class Meta:
