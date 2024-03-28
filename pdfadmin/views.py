@@ -110,14 +110,34 @@ class QuestionsView(APIView):
             }
         )
     
+class QuestionDeleteView(APIView):
+
     def delete(self, request):
-        serializer = QuestionIdListSerializer(data = request.data)
-        serializer.is_valid(raise_exception=True)
-        for id in serializer.validated_data['ids']:
-            question = Question.objects.filter(id = id)
-            if question:
-                question[0].delete()
-        return Response(status=status.HTTP_200_OK)
+
+        if 'id' not in request.data:
+            return Response(
+                {
+                    "message": "id must be provided"
+                },
+                status=status.HTTP_400_BAD_REQUEST
+                )
+        id = request.data['id']
+        section = Question.objects.filter(id = id)
+        if section:
+            section[0].delete()
+            return Response(
+                {
+                    "message": "item deleted successfully"
+                },
+                status=status.HTTP_200_OK
+                )
+        else:
+            return Response(
+                {
+                    "message": "No question found"
+                },
+                status=status.HTTP_404_NOT_FOUND
+                )  
         
     
 class AllQuestionsView(ListAPIView):
