@@ -4,7 +4,7 @@
             "question": "Do you have an understanding of your daily caloric needs to support your weight goals?",
             "suggestion": {
                 "title": "",
-                "details": ["Consider consulting with a nutritionist or using online tools to calculate your daily caloric needs based on your goals. Educate yourself on the factors influencing caloric requirements, such as activity level and metabolism"]
+                "details": ["Consider consulting with a nutritionist or using online tools to calculate your daily caloric needs based on your goals. Educate yourself on the factors influencing caloric requirements, such as activity level and metabolism."]
             },
             "correctAnswer":"yes"
         },
@@ -19,7 +19,7 @@
         "3": {
             "question": "Can you identify what constitutes a healthy portion size when preparing or consuming meals?",
             "suggestion": {
-                "title": "Portion Size Recognition:",
+                "title": "Portion Size Recognition",
                 "details": ["Use visual aids like the palm of your hand or common objects to estimate portion sizes. Practice using measuring cups and scales until you develop a better sense of appropriate servings. Consider taking smaller portions initially and assessing hunger cues before going for seconds."]
             },
             "correctAnswer":"yes"
@@ -88,8 +88,8 @@
             "suggestion": {
                 "title": "Weight Management Despite Conditions",
                 "details": [
-                    "Suggestions: Medical Records Review: Request a copy of your medical records from your healthcare provider. Review the documents to understand your diagnosed medical conditions. Highlight any sections that discuss how these conditions may impact your weight. If there's uncertainty, schedule a follow-up appointment with your healthcare provider to discuss your medical history.",
-                    "Collaborative Planning: Work closely with your healthcare provider to develop a tailored weight management plan that considers your medical condition. This plan may include dietary modifications, physical activity recommendations, and regular check-ins."
+                    "<b>Suggestions</b>: Medical Records Review: Request a copy of your medical records from your healthcare provider. Review the documents to understand your diagnosed medical conditions. Highlight any sections that discuss how these conditions may impact your weight. If there's uncertainty, schedule a follow-up appointment with your healthcare provider to discuss your medical history.",
+                    "<b>Collaborative Planning</b>: Work closely with your healthcare provider to develop a tailored weight management plan that considers your medical condition. This plan may include dietary modifications, physical activity recommendations, and regular check-ins."
                 ]
             },
             "correctAnswer":"no"
@@ -97,7 +97,7 @@
         "12": {
             "question": "Are you aware of any diagnosed mental health conditions affecting your weight? ",
             "suggestion": {
-                "title": "Mental health can affect weight through emotional eating, changes in appetite,  reduced motivation for physical activity. Provide some short suggestions for addressing these.",
+                "title": "Mental health can affect weight through emotional eating, changes in appetite, reduced motivation for physical activity.",
                 "details": [
                     "Develop alternative coping mechanisms for emotional distress, such as journaling, deep breathing exercises, or engaging in a hobby. Seek support from friends, family, or a therapist to address underlying emotional triggers.",
                     "Changes in Appetite: Establish regular, balanced meal times. Focus on nutrient-dense foods to support overall health. Consult a registered dietitian to create a personalised meal plan aligned with your appetite patterns.",
@@ -123,7 +123,7 @@
             "suggestion": {
                 "title": "Weight Change Observation",
                 "details": [
-                    "Regular Monitoring: Keep a record of your weight changes over time. Create a simple chart or use a tracking app to document fluctuations. Share this information with your healthcare provider during check-ups for a more comprehensive understanding."
+                    "<b>Regular Monitoring</b>: Keep a record of your weight changes over time. Create a simple chart or use a tracking app to document fluctuations. Share this information with your healthcare provider during check-ups for a more comprehensive understanding."
                 ]
             },
             "correctAnswer":"no"
@@ -133,7 +133,7 @@
             "suggestion": {
                 "title": "Medication Impact Awareness",
                 "details": [
-                    "Pharmacist Consultation: Schedule a consultation with your pharmacist to discuss the potential side effects of your medications, including their impact on weight. Pharmacists can provide detailed insights into medication-related concerns."
+                    "<b>Pharmacist Consultation</b>: Schedule a consultation with your pharmacist to discuss the potential side effects of your medications, including their impact on weight. Pharmacists can provide detailed insights into medication-related concerns."
                 ]
             },
             "correctAnswer":"no"
@@ -143,7 +143,7 @@
             "suggestion": {
                 "title": "Weight Management Despite Conditions",
                 "details": [
-                    "Collaborative Planning - work closely with your healthcare provider to develop a tailored weight management plan that considers your medical condition. This plan may include dietary modifications, physical activity recommendations, and regular check-ins."]
+                    "<b>Collaborative Planning</b>: Work closely with your healthcare provider to develop a tailored weight management plan that considers your medical condition. This plan may include dietary modifications, physical activity recommendations, and regular check-ins."]
             },
             "correctAnswer":"no"
         }
@@ -154,7 +154,7 @@
             "suggestion": {
                 "title": "Emotional eating",
                 "details": [
-                    "Alternative Coping Strategies: Identify alternative ways to cope with emotions without turning to food. This could include journaling, deep breathing exercises, or engaging in a hobby. Consider seeking support from friends, family, or a therapist to discuss emotions and explore healthier coping mechanisms."]
+                    "<b>Alternative Coping Strategies</b>: Identify alternative ways to cope with emotions without turning to food. This could include journaling, deep breathing exercises, or engaging in a hobby. Consider seeking support from friends, family, or a therapist to discuss emotions and explore healthier coping mechanisms."]
             },
             "correctAnswer":"no"
         },
@@ -163,7 +163,7 @@
             "suggestion": {
                 "title": "Boredom Eating",
                 "details": [
-                    "Create a Boredom List: Develop a list of alternative activities to combat boredom. This may include going for a walk, reading a book, or trying a new hobby. When boredom strikes, refer to this list to engage in a non-food-related activity."]
+                    "<b>Create a Boredom List</b>: Develop a list of alternative activities to combat boredom. This may include going for a walk, reading a book, or trying a new hobby. When boredom strikes, refer to this list to engage in a non-food-related activity."]
             },
             "correctAnswer":"no"
         },
@@ -172,7 +172,7 @@
             "suggestion": {
                 "title": "Eating when lonely",
                 "details": [
-                    "Connect Socially: Reach out to friends, family, or support groups when feeling lonely. Schedule regular social activities to build connections and combat isolation. Consider joining clubs or classes to meet new people and expand your social circle."]
+                    "<b>Connect Socially</b>: Reach out to friends, family, or support groups when feeling lonely. Schedule regular social activities to build connections and combat isolation. Consider joining clubs or classes to meet new people and expand your social circle."]
             },
             "correctAnswer":"no"
         },
@@ -181,7 +181,7 @@
             "suggestion": {
                 "title": "Celebratory occasion eating",
                 "details": [
-                    "Plan Moderation: Plan ahead for celebratory occasions by setting limits on indulgent foods. Opt for smaller portions or choose healthier alternatives. Focus on the social aspect of the celebration rather than using food as the main source of enjoyment."]
+                    "<b>Plan Moderation</b>: Plan ahead for celebratory occasions by setting limits on indulgent foods. Opt for smaller portions or choose healthier alternatives. Focus on the social aspect of the celebration rather than using food as the main source of enjoyment."]
             },
             "correctAnswer":"no"
         },
@@ -190,7 +190,7 @@
             "suggestion": {
                 "title": "Mindless snacking",
                 "details": [
-                    "Solution: Mindful Snacking: Create a designated eating area away from distractions. Portion snacks mindfully, and focus on the sensory experience of eating. Consider using smaller bowls or plates to prevent overeating during screen time."]
+                    "<b>Solution: Mindful Snacking</b>: Create a designated eating area away from distractions. Portion snacks mindfully, and focus on the sensory experience of eating. Consider using smaller bowls or plates to prevent overeating during screen time."]
             },
             "correctAnswer":"no"
         },
@@ -199,7 +199,7 @@
             "suggestion": {
                 "title": "Comfort snacking",
                 "details": [
-                    "Alternative Coping Strategies: Identify alternative ways to cope with emotions without turning to food. This could include journaling, deep breathing exercises, or engaging in a hobby. Consider seeking support from friends, family, or a therapist to discuss emotions and explore healthier coping mechanisms."]
+                    "<b>Alternative Coping Strategies</b>: Identify alternative ways to cope with emotions without turning to food. This could include journaling, deep breathing exercises, or engaging in a hobby. Consider seeking support from friends, family, or a therapist to discuss emotions and explore healthier coping mechanisms."]
             },
             "correctAnswer":"no"
         },
@@ -208,7 +208,7 @@
             "suggestion": {
                 "title": "Food Rewards",
                 "details": [
-                    "Non-Food Rewards: Establish a list of non-food rewards for achievements. This could include treating yourself to a movie, taking a day off, or enjoying a relaxing activity. Shift the focus from food as a reward to activities that contribute to your overall well-being."]
+                    "<b>Non-Food Rewards</b>: Establish a list of non-food rewards for achievements. This could include treating yourself to a movie, taking a day off, or enjoying a relaxing activity. Shift the focus from food as a reward to activities that contribute to your overall well-being."]
             },
             "correctAnswer":"no"
         },
@@ -217,7 +217,7 @@
             "suggestion": {
                 "title": "Late Night Snacking",
                 "details": [
-                    "Nighttime Routine: Develop a calming nighttime routine that doesn't involve eating. This could include reading a book, practicing relaxation techniques, or engaging in a quiet hobby. Create a soothing environment to promote better sleep and emotional well-being."]
+                    "<b>Nighttime Routine</b>: Develop a calming nighttime routine that doesn't involve eating. This could include reading a book, practicing relaxation techniques, or engaging in a quiet hobby. Create a soothing environment to promote better sleep and emotional well-being."]
             },
             "correctAnswer":"no"
         },
@@ -226,7 +226,7 @@
             "suggestion": {
                 "title": "Healthy Social Activities",
                 "details": [
-                    "Healthy Social Activities: Plan social activities that revolve around non-food-related experiences, such as outdoor activities, games, or cultural events. Choose restaurants with healthier options or suggest potluck-style gatherings where you can contribute a nutritious dish"]
+                    "<b>Healthy Social Activities</b>: Plan social activities that revolve around non-food-related experiences, such as outdoor activities, games, or cultural events. Choose restaurants with healthier options or suggest potluck-style gatherings where you can contribute a nutritious dish."]
             },
             "correctAnswer":"no"
         },
@@ -288,7 +288,7 @@
             "suggestion": {
                 "title": "Fruit Accessibility",
                 "details": [
-                    "Fruit Accessibility: Keep a variety of fruits readily available and visible at home. Consider prepping fruit ahead of time for easy snacking. Set a goal to incorporate fruit into different meals, such as adding berries to breakfast or having a piece of fruit as an afternoon snack."
+                    "<b>Fruit Accessibility</b>: Keep a variety of fruits readily available and visible at home. Consider prepping fruit ahead of time for easy snacking. Set a goal to incorporate fruit into different meals, such as adding berries to breakfast or having a piece of fruit as an afternoon snack."
                 ]
             },
             "correctAnswer":"yes"

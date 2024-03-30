@@ -103,7 +103,8 @@ class PDFView(APIView):
 
                 suggestionText = f'<b>{suggestionTitle}</b>'
                 for detail in suggestionDetail:
-                    suggestionText += f'<p>{detail}</p>'
+                    suggestionText += f'<br />{detail}'
+                suggestionText += '<br />'
                 
                 qObj = Question.objects.create(
                     section = sectionObject,
@@ -122,6 +123,7 @@ class PDFView(APIView):
     def get(self, request, email):
         userResponse = UserResponse.objects.get(email=email)
         serializer = UserResponseSerializer(userResponse)
+        serializer.is_valid()
         formattedResponse = changeResponseToPdfFormat(serializer.data)
         userEmail = formattedResponse['userInfo']['email']
         path = f"static/{userEmail}.pdf"
@@ -131,7 +133,7 @@ class PDFView(APIView):
                 send_pdf_email(request, userEmail, pdf)
         except FileNotFoundError:
             return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR, data={ 'message': "Couldn't send email" })
-        return Response(status=status.HTTP_200_OK, data={"message": "Success"})
+        return Response(status=status.HTTP_200_OK, data={"message": "Success", "response": serializer.data})
         # path = f"static/{email}.pdf"
         # try:
         #     with open(path, 'rb') as pdf:
