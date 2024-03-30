@@ -123,7 +123,6 @@ class PDFView(APIView):
     def get(self, request, email):
         userResponse = UserResponse.objects.get(email=email)
         serializer = UserResponseSerializer(userResponse)
-        serializer.is_valid()
         formattedResponse = changeResponseToPdfFormat(serializer.data)
         userEmail = formattedResponse['userInfo']['email']
         path = f"static/{userEmail}.pdf"
