@@ -180,12 +180,13 @@ def changeResponseToPdfFormat(userResponse):
 
         for secQues in sectionQuestions:
             totalQuestions += 1
-            if secQues.id not in response:
-                response[secQues.id] = 'no'
-            if response[secQues.id].lower() == secQues.correctAnswer.lower():
+            secQuesId = str(secQues.id)
+            if secQuesId not in response:
+                response[secQuesId] = 'no'
+            if response[secQuesId].lower() == secQues.correctAnswer.lower():
                 totalCorrectResponse += 1
             output['sections'][section.title]['questions'][secQues.content] = {
-                    'answer': response[secQues.id],
+                    'answer': response[secQuesId],
                     'title': secQues.content,
                     'suggestion': secQues.suggestion,
                     'correctAnswer': secQues.correctAnswer
