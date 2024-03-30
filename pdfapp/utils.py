@@ -162,13 +162,15 @@ def changeResponseToPdfFormat(userResponse):
     sections = QuestionSection.objects.all()
 
     for section in sections:
+        sectionQuestions = Question.objects.filter(section = section)
+        if not sectionQuestions:
+            continue
         output['sections'][section.title] = {}
         output['sections'][section.title]['questions'] = {}
 
         totalCorrectResponse = 0
         totalQuestions = 0
 
-        sectionQuestions = Question.objects.filter(section = section)
         for secQues in sectionQuestions:
             totalQuestions += 1
             if secQues.id not in response:
@@ -181,7 +183,7 @@ def changeResponseToPdfFormat(userResponse):
                     'suggestion': secQues.suggestion
                 }
         
-        score = int((totalCorrectResponse / totalQuestions) * 100)
+        score = int((totalCorrectResponse / totalQuestions) * 100) if totalQuestions > 0 else 0
         output['sections'][section.title]['score'] = score
 
     # for key, val in response.items():
