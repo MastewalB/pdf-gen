@@ -110,7 +110,14 @@ class PDFGenerator:
                 textStyle.leading = 15
                 textSection = Paragraph(text, textStyle)
 
+                correctText = f"Correct Answer: <i>{obj['correctAnswer']}</i> <br />"
+                correctTextStyle = ParagraphStyle(self.font_name, fontSize = 12, alignment = TA_LEFT, justifyLastLine = 1)
+                correctTextStyle.leading = 15
+                correctTextSection = Paragraph(correctText, correctTextStyle)
+
+
                 self.elements.append(textSection)
+                self.elements.append(correctTextSection)
                 
                 self.elements.append(Spacer(0, 10))
 
@@ -180,7 +187,8 @@ def changeResponseToPdfFormat(userResponse):
             output['sections'][section.title]['questions'][secQues.content] = {
                     'answer': response[secQues.id],
                     'title': secQues.content,
-                    'suggestion': secQues.suggestion
+                    'suggestion': secQues.suggestion,
+                    'correctAnswer': secQues.correctAnswer
                 }
         
         score = int((totalCorrectResponse / totalQuestions) * 100) if totalQuestions > 0 else 0
