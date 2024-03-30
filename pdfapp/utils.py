@@ -1,5 +1,6 @@
-import json
+# import json
 from datetime import datetime
+from pdfadmin.models import Question, QuestionSection
 
 from reportlab.pdfgen import canvas
 
@@ -104,7 +105,7 @@ class PDFGenerator:
             self.elements.append(Spacer(0, 20))
 
             for q, obj in val['questions'].items():
-                text = f"{q}. <i>{obj['title']}</i> <br /> <br />Your Answer: <i>{obj['answer']}</i> <br />"
+                text = f"<b><i>{obj['title']}</i></b> <br /> <br />Your Answer: <i>{obj['answer']}</i> <br />"
                 textStyle = ParagraphStyle(self.font_name, fontSize = 12, alignment = TA_LEFT, justifyLastLine = 1)
                 textStyle.leading = 15
                 textSection = Paragraph(text, textStyle)
@@ -113,31 +114,40 @@ class PDFGenerator:
                 
                 self.elements.append(Spacer(0, 10))
 
-                suggestionTitle = f"<b>{obj['suggestion']['title']}</b>"
-                suggestionTitleStyle = ParagraphStyle(self.font_name, fontSize = 12, alignment = TA_LEFT, justifyLastLine = 1)
-                suggestionSection = Paragraph(suggestionTitle, suggestionTitleStyle)
+                suggestion = obj['suggestion']
+                suggestionStyle = ParagraphStyle(self.font_name, fontSize = 12, alignment = TA_LEFT, justifyLastLine = 1)
+                suggestionStyle.leading = 15
+                suggestionSection = Paragraph(suggestion, suggestionStyle)
                 self.elements.append(suggestionSection)
 
-                self.elements.append(Spacer(0, 10))
-
-                for detail in obj['suggestion']['details']:
-                    detailTitle = detail
-                    detailTitleStyle = ParagraphStyle(self.font_name, fontSize = 12, alignment = TA_LEFT, justifyLastLine = 1)
-                    detailTitleStyle.leading = 15
-                    detailSection = Paragraph(detailTitle, detailTitleStyle)
-                    self.elements.append(detailSection)
-                    self.elements.append(Spacer(0, 10))                    
                 self.elements.append(Spacer(0, 20))
+
+
+                # suggestionTitle = f"<b>{obj['suggestion']['title']}</b>"
+                # suggestionTitleStyle = ParagraphStyle(self.font_name, fontSize = 12, alignment = TA_LEFT, justifyLastLine = 1)
+                # suggestionSection = Paragraph(suggestionTitle, suggestionTitleStyle)
+                # self.elements.append(suggestionSection)
+
+                # self.elements.append(Spacer(0, 10))
+
+                # for detail in obj['suggestion']['details']:
+                #     detailTitle = detail
+                #     detailTitleStyle = ParagraphStyle(self.font_name, fontSize = 12, alignment = TA_LEFT, justifyLastLine = 1)
+                #     detailTitleStyle.leading = 15
+                #     detailSection = Paragraph(detailTitle, detailTitleStyle)
+                #     self.elements.append(detailSection)
+                #     self.elements.append(Spacer(0, 10))                    
+                # self.elements.append(Spacer(0, 20))
             
             self.elements.append(PageBreak())
 
                 
 
 def changeResponseToPdfFormat(userResponse):
-    questionInfo = open('pdfapp/question_info.json')
-    questions = json.load(questionInfo)
+    # questionInfo = open('pdfapp/question_info.json')
+    # questions = json.load(questionInfo)
     
-    questionInfo.close()
+    # questionInfo.close()
     
     output = {}
 
@@ -149,34 +159,64 @@ def changeResponseToPdfFormat(userResponse):
     output['userInfo'] = userInfo
     output['sections'] = {}
 
-    for sectionTitle in questions:
-        section = questions[sectionTitle]
-        
-        output['sections'][sectionTitle] = {}
-        output['sections'][sectionTitle]['questions'] = {}
+    sections = QuestionSection.objects.all()
+
+    for section in sections:
+        output['sections'][section.title] = {}
+        output['sections'][section.title]['questions'] = {}
 
         totalCorrectResponse = 0
         totalQuestions = 0
 
-        for q in section:
+        sectionQuestions = Question.objects.filter(section = section)
+        for secQues in sectionQuestions:
             totalQuestions += 1
-            question = section[q]
-
-            if q not in response:
-                response[q] = 'no'
-            if response[q].lower() == question['correctAnswer'].lower():
+            if secQues.id not in response:
+                response[secQues.id] = 'no'
+            if response[secQues.id].lower() == secQues.correctAnswer.lower():
                 totalCorrectResponse += 1
-            else:
-                output['sections'][sectionTitle]['questions'][q] = {
-                    'answer': response[q],
-                    'title': question['question'],
-                    'suggestion': {
-                        'title': question['suggestion']['title'],
-                        'details': question['suggestion']['details']
-                    }
+            output['sections'][section.title]['questions'][secQues.content] = {
+                    'answer': response[secQues.id],
+                    'title': secQues.content,
+                    'suggestion': secQues.suggestion
                 }
+        
         score = int((totalCorrectResponse / totalQuestions) * 100)
-        output['sections'][sectionTitle]['score'] = score
+        output['sections'][section.title]['score'] = score
+
+    # for key, val in response.items():
+    #     questionDB = Question.objects.get(id = key)
+
+
+
+    # for sectionTitle in questions:
+    #     section = questions[sectionTitle]
+        
+    #     output['sections'][sectionTitle] = {}
+    #     output['sections'][sectionTitle]['questions'] = {}
+
+    #     totalCorrectResponse = 0
+    #     totalQuestions = 0
+
+    #     for q in section:
+    #         totalQuestions += 1
+    #         question = section[q]
+
+    #         if q not in response:
+    #             response[q] = 'no'
+    #         if response[q].lower() == question['correctAnswer'].lower():
+    #             totalCorrectResponse += 1
+    #         else:
+    #             output['sections'][sectionTitle]['questions'][q] = {
+    #                 'answer': response[q],
+    #                 'title': question['question'],
+    #                 'suggestion': {
+    #                     'title': question['suggestion']['title'],
+    #                     'details': question['suggestion']['details']
+    #                 }
+    #             }
+    #     score = int((totalCorrectResponse / totalQuestions) * 100)
+    #     output['sections'][sectionTitle]['score'] = score
     
     return output
 

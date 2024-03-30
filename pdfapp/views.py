@@ -120,16 +120,27 @@ class PDFView(APIView):
         )
 
     def get(self, request, email):
-
-        path = f"static/{email}.pdf"
+        userResponse = UserResponse.objects.get(email=email)
+        serializer = UserResponseSerializer(userResponse)
+        formattedResponse = changeResponseToPdfFormat(serializer.data)
+        userEmail = formattedResponse['userInfo']['email']
+        path = f"static/{userEmail}.pdf"
+        PDFGenerator(path, formattedResponse)
         try:
             with open(path, 'rb') as pdf:
-                    
-                response = HttpResponse(pdf.read(), content_type='application/pdf')
-                response['Content-Disposition'] = f'inline;filename={path}.pdf'
-                return response
+                send_pdf_email(request, userEmail, pdf)
         except FileNotFoundError:
-            return Response(status=status.HTTP_404_NOT_FOUND, data={ 'message': "File not Found" })
+            return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR, data={ 'message': "Couldn't send email" })
+        return Response(status=status.HTTP_200_OK, data={"message": "Success"})
+        # path = f"static/{email}.pdf"
+        # try:
+        #     with open(path, 'rb') as pdf:
+                    
+        #         response = HttpResponse(pdf.read(), content_type='application/pdf')
+        #         response['Content-Disposition'] = f'inline;filename={path}.pdf'
+        #         return response
+        # except FileNotFoundError:
+        #     return Response(status=status.HTTP_404_NOT_FOUND, data={ 'message': "File not Found" })
 
 
 def send_pdf_email(request, to_email, pdf):
