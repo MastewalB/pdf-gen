@@ -78,7 +78,7 @@ class PaymentView(APIView):
         except stripe.error.InvalidRequestError as e:
             return Response(status=status.HTTP_400_BAD_REQUEST, data={"message": "Error while processing payment. Invalid request."})
         except Exception as e:
-            return Response(status=status.HTTP_400_BAD_REQUEST, data={"message": "Error while processing payment. Please try again.", "error": e.__str__})
+            return Response(status=status.HTTP_400_BAD_REQUEST, data={"message": "Error while processing payment. Please try again.", "error": str(e)})
 
 class PDFView(APIView):
 
