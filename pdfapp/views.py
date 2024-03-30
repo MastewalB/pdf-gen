@@ -134,7 +134,7 @@ class PDFView(APIView):
             return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR, data={ 'message': "Couldn't send email" })
         except Exception as e:
             return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR, data={ 'message': str(e) })
-        return Response(status=status.HTTP_200_OK, data={"message": "Success"})
+        return Response(status=status.HTTP_200_OK, data={"message": "Success", "data": serializer.data})
         # path = f"static/{email}.pdf"
         # try:
         #     with open(path, 'rb') as pdf:

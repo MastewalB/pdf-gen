@@ -105,7 +105,7 @@ class PDFGenerator:
             self.elements.append(Spacer(0, 20))
 
             for q, obj in val['questions'].items():
-                text = f"<b><i>{obj['title']}</i></b> <br /> <br />Your Answer: <i>{obj['answer']}</i> <br />"
+                text = f"{obj['number']}. <b><i>{obj['title']}</i></b> <br /> <br />Your Answer: <i>{obj['answer']}</i> <br />"
                 textStyle = ParagraphStyle(self.font_name, fontSize = 12, alignment = TA_LEFT, justifyLastLine = 1)
                 textStyle.leading = 15
                 textSection = Paragraph(text, textStyle)
@@ -178,6 +178,7 @@ def changeResponseToPdfFormat(userResponse):
         totalCorrectResponse = 0
         totalQuestions = 0
 
+        number = 1
         for secQues in sectionQuestions:
             totalQuestions += 1
             secQuesId = str(secQues.id)
@@ -189,9 +190,11 @@ def changeResponseToPdfFormat(userResponse):
                     'answer': response[secQuesId],
                     'title': secQues.content,
                     'suggestion': secQues.suggestion,
-                    'correctAnswer': secQues.correctAnswer
+                    'correctAnswer': secQues.correctAnswer,
+                    'number': number
                 }
-        
+
+            number += 1
         score = int((totalCorrectResponse / totalQuestions) * 100) if totalQuestions > 0 else 0
         output['sections'][section.title]['score'] = score
 
