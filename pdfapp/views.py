@@ -76,7 +76,7 @@ class PaymentView(APIView):
         except stripe.error.CardError as e:
             return Response(status=status.HTTP_400_BAD_REQUEST, data={"message": "Error while processing payment. {}".format(e.user_message)})
         except stripe.error.InvalidRequestError as e:
-            return Response(status=status.HTTP_400_BAD_REQUEST, data={"message": "Error while processing payment. Invalid request."})
+            return Response(status=status.HTTP_400_BAD_REQUEST, data={"message": "Error while processing payment. Invalid request.", "error": str(e)})
         except Exception as e:
             return Response(status=status.HTTP_400_BAD_REQUEST, data={"message": "Error while processing payment. Please try again.", "error": str(e)})
 
